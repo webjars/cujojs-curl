@@ -48,12 +48,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <cujo-module-name>curl</cujo-module-name>
-        <cujo-module-version>0.8.1</cujo-module-version>
 
-        <downloadUrl>https://github.com/</downloadUrl>
-        <destinationDir>
-            ${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${cujo-module-version}
-        </destinationDir>
+        <upstream.url>https://github.com/</upstream.url>
+        <upstream.version>0.8.1</upstream.version>
+
+        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
 
         <maven-antrun-plugin-version>1.7</maven-antrun-plugin-version>
         <maven-release-plugin-version>2.4</maven-release-plugin-version>
@@ -75,8 +74,8 @@
                             <goal>download-single</goal>
                         </goals>
                         <configuration>
-                            <url>${downloadUrl}</url>
-                            <fromFile>cujojs/${cujo-module-name}/archive/${cujo-module-version}.zip</fromFile>
+                            <url>${upstream.url}</url>
+                            <fromFile>cujojs/${cujo-module-name}/archive/${upstream.version}.zip</fromFile>
                             <toFile>${project.build.directory}/artifacts/${cujo-module-name}.zip</toFile>
                         </configuration>
                     </execution>
@@ -92,8 +91,8 @@
                             <tasks>
                                 <unzip src="${project.build.directory}/artifacts/${cujo-module-name}.zip" dest="${project.build.directory}/sources" />
 
-                                <move todir="${destinationDir}">
-                                    <fileset dir="${project.build.directory}/sources/${cujo-module-name}-${cujo-module-version}/dist">
+                                <move todir="${destDir}">
+                                    <fileset dir="${project.build.directory}/sources/${cujo-module-name}-${upstream.version}/dist">
                                         <include name="*.js" />
                                         <include name="*/*.js" />
                                     </fileset>
