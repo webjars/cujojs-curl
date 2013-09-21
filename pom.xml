@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>cujojs-curl</artifactId>
-    <version>0.8.1-SNAPSHOT</version>
+    <version>0.8.1</version>
     <name>CujoJS: curl.js</name>
     <description>WebJar for the curl.js AMD loader from the CurlJS library.</description>
     <url>http://webjars.org</url>
@@ -28,7 +28,7 @@
         <url>https://github.com/webjars/cujojs-curl</url>
         <connection>scm:git:https://github.com/webjars/cujojs-curl.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/cujojs-curl.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>cujojs-curl-0.8.1</tag>
     </scm>
 
     <developers>
